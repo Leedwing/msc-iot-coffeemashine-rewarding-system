@@ -62,7 +62,7 @@ Die Tabelle UserCoffeeLevel enthält die Daten über durchgeführe Kochvorgänge
 
 **Datenbankmodell**
 
-![DB_Modell.png](https://raw.githubusercontent.com/Leedwing/msc-iot-coffeemashine-rewarding-system/DB_Modell.png "Datenbankmodell")
+![DB_Modell.png](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/DB_Modell.png)
 
 
 ### REST-Services
@@ -71,7 +71,7 @@ Die Tabelle UserCoffeeLevel enthält die Daten über durchgeführe Kochvorgänge
 ### Bewertungssytem-Webfrontend
 Das Bewertungssystem ist über ein Webfrontend erreichbar. Man erreicht diese Seite allerdings nur aus dem Netzwerk des HHZ, sodass sichergestellt ist, dass dies auch nur von Personen innerhalb des HHZ aufgerufen werden kann.
 
-![Webfrontend_Bewertungssystem.png](https://raw.githubusercontent.com/Leedwing/msc-iot-coffeemashine-rewarding-system/Webfrontend_Bewertungssystem.png "Datenbankmodell")
+![Webfrontend_Bewertungssystem.png](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/Webfrontend_Bewertungssystem.png?raw=true)
 
 Wie im Schaubild zu sehen kann man sich im oberen Teil der Seite registrieren. Hierfür müssen nur Matrikelnummer, Vorname und Nachname angegeben werden un anschließend der Registrieren-Button gedrückt werden.
 Wird der Button gedrückt wird eine REST-Anfrage gesendet, welche weitere Schritte zur Speicherung der Credentials in der Datenbank vornimmt.

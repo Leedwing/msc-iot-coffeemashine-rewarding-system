@@ -12,7 +12,7 @@
 - [Ergebnis](#ergebnis)
   * [Bewertungssytem-Webfrontend](#bewertungssytem-webfrontend)
   * [Übersicht REST-Services](#Übersicht-rest-services)
-  * [Beispielanwendungen der Services](#beispielanwendungen-der-services)
+  * [Anwendung der Parallelgruppe](#anwendung-der-parallelgruppe)
 
 
 ## Allgemein
@@ -83,11 +83,8 @@ SWAGGER-Screenshot
 
 kurze Beschreibung
 
-### Beispielanwendungen der Services
-Die implementierten Services wurden z.T. zur Unterstützung eines parallel laufenden Projekts erstellt, da diese auf von uns gesammelte Daten auf verschiedene Art und Weisen zugreifen mussten. Die bereitgestellten REST-Services erfüllten genau diese Kriterien bzw. wurden genau auf diese Anforderungen hin entworfen und implementiert.
+### Anwendung der Parallelgruppe
+Die implementierten Services wurden z.T. zur Unterstützung eines parallel laufenden Projekts erstellt, da diese auf die von uns gesammelte Daten auf verschiedene Art und Weise zugreifen mussten. Die bereitgestellten REST-Services erfüllten genau diese Kriterien bzw. wurden z.T. genau für diese Anforderungen entworfen und implementiert.
 
-Anhand der REST-Services konnten Füllstand, Frische, fleißigster Koch etc. ganz einfach abgefragt werden. Die Parallelgruppe konnte diese Services verwenden, um die Daten per Amazon Alexa zu erfragen und nette Anfragen zu generieren.
+Anhand der REST-Services konnten Füllstand, Frische, fleißigster Koch etc. ganz einfach abgefragt werden. Die Parallelgruppe konnte diese Services verwenden, um die Daten per Amazon Alexa zu erfragen und dabei für das HHZ sinnvolle und in der Praxis anwendbare Anfragen zu generieren.
 Das Speichern von Kochvorgängen war hierbei allerdings noch nicht berücksichtigt.
-
-
-

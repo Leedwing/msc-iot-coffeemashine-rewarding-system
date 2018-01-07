@@ -1,4 +1,4 @@
-# IOT Projekt – Bewertungssystem Kaffeemaschine HHZ
+# IOT Hackathon – Bewertungssystem für die Kaffeemaschine des HHZ
 
 ## Inhaltsverzeichnis
 - [Allgemein](#allgemein)

@@ -1,24 +1,23 @@
 # IOT Projekt – Bewertungssystem Kaffeemaschine HHZ
 
 ## Inhaltsverzeichnis
-* Allgemein
-	* Idee
-	* MVP
-	* Architektur
-	* Komponenten
-	* Teilnehmer & Zuständigkeiten
-* Durchführung
-	* Datenerhebung und -verarbeitung
-	* REST-Services
-* Ergebnis 
-	* Bewertungssytem-Webfrontend
-	* Übersicht REST-Services
-	* Beispielanwendungen der Services
+- [Allgemein](#allgemein)
+  * [Idee](#idee)
+  * [MVP](#mvp)
+  * [Architektur](#architektur)
+  * [Teilnehmer und Zuständigkeiten](#teilnehmer-und-zuständigkeiten)
+- [Durchführung](#durchführung)
+  * [Datenerhebung und -verarbeitung](#datenerhebung-und--verarbeitung)
+  * [REST-Services](#rest-services)
+- [Ergebnis](#ergebnis)
+  * [Bewertungssytem-Webfrontend](#bewertungssytem-webfrontend)
+  * [Übersicht REST-Services](#Übersicht-rest-services)
+  * [Beispielanwendungen der Services](#beispielanwendungen-der-services)
 
 
 ## Allgemein
-Das folgende Projekt entstand im Rahmen eines zweitägigen ‚Hackathons‘ der Veranstaltung Internet of Things (kurz IoT) des Herman Hollerith Zentrums (HHZ) in Böblingen. Dabei bestand die Aufgabe darin, Anwendungen von IoT zu finden, welche das Studieren am HHZ in irgendeiner Form verbessern bzw. bereichern soll, und die gewählte Anwendung anschließend in einer zweitägigen Umsetzungsphase (als ‚Hackathon‘ bezeichnet) in die Realität umzusetzen.
-Bei der Planung des zu realisierenden Projekts ist der Fokus so zu wählen, dass die Hauptfunktionalität des Projekts am Ende der zwei Tage präsentierbar ist. Dieser Fokus wird im Folgenden als MVP bezeichnet und beschreibt eben genau diese Hauptfunktionen des Projekts um die Realisierbarkeit des gesamten Projekts bzw. der Idee dahinter zu veranschaulichen.
+Das folgende Projekt entstand im Rahmen eines zweitägigen ‚Hackathons‘ der Veranstaltung Internet of Things (kurz IoT) des Herman Hollerith Zentrums (HHZ) in Böblingen. Dabei bestand die Aufgabe darin, Anwendungen von IoT zu finden, welche das Studieren am HHZ in irgendeiner Form verbessern oder bereichern soll, und anschließend die gewählte Anwendung in einer zweitägigen Umsetzungsphase (als ‚Hackathon‘ bezeichnet) in die Realität umzusetzen.
+Bei der Planung des zu realisierenden Projekts ist der Fokus so zu wählen, dass die Hauptfunktionalität des Projekts am Ende der zwei Tage anhand eines sogenannten MVP (minimal viable product). D.h. es wurde versucht eben genau diese Hauptfunktionen umzusetzen um die Realisierbarkeit des gesamten Projekts bzw. der Idee dahinter zu veranschaulichen.
 
 ### Idee
 Die von uns verfolgte Idee basiert auf einem Projekt, welches ebenfalls wie dieses, im Rahmen eines Hackathons entstanden ist. Das damalige Projekt ‚msc bla Link‘ ermöglichte es, den Füllstand der im HHZ befindlichen Kaffeemaschine anhand einer Waage zu ermitteln und anhand dieser Daten Informationen über den aktuellen Status der Maschine per Twitter abzurufen.
@@ -41,10 +40,11 @@ Unsere Anforderungen haben wir wie folgt definiert:
 * Bewertungssystem zur Speicherung von durchgeführten Kochvorgängen in Form eines Webfrontends
 
 ### Architektur
+### Teilnehmer und Zuständigkeiten
+Pascal Schmidt (Raspberry Pi Setup, Python Sensor, Python mit SQL, Webfrontend, Dokumentation) 
 
-### Teilnehmer & Zuständigkeiten
-Pascal Schmidt (Raspberry Pi Setup, Python Sensor, Python mit SQL, Webfrontend, Dokumentation)
-Lee Edwing Nguepedja (Implementierung REST Services, Apache Tomcat Setup, Webfrontend, Dokumentation)
+Lee Edwing Nguepedja (Implementierung REST Services, Apache Tomcat Setup, Webfrontend, Dokumentation) 
+
 Adil Sahiner (Präsentation)
 
 ## Durchführung
@@ -62,16 +62,21 @@ Die Tabelle UserCoffeeLevel enthält die Daten über durchgeführe Kochvorgänge
 
 **Datenbankmodell**
 
-![BLABLA](https://raw.githubusercontent.com/Leedwing/msc-iot-coffeemashine-rewarding-system/DB_Modell.png "Datenbankmodell")
+![DB_Modell.png](https://raw.githubusercontent.com/Leedwing/msc-iot-coffeemashine-rewarding-system/DB_Modell.png "Datenbankmodell")
 
 
 ### REST-Services
 
 ## Ergebnis
 ### Bewertungssytem-Webfrontend
-GRAFIK
+Das Bewertungssystem ist über ein Webfrontend erreichbar. Man erreicht diese Seite allerdings nur aus dem Netzwerk des HHZ, sodass sichergestellt ist, dass dies auch nur von Personen innerhalb des HHZ aufgerufen werden kann.
 
-kurze Beschreibung
+![Webfrontend_Bewertungssystem.png](https://raw.githubusercontent.com/Leedwing/msc-iot-coffeemashine-rewarding-system/Webfrontend_Bewertungssystem.png "Datenbankmodell")
+
+Wie im Schaubild zu sehen kann man sich im oberen Teil der Seite registrieren. Hierfür müssen nur Matrikelnummer, Vorname und Nachname angegeben werden un anschließend der Registrieren-Button gedrückt werden.
+Wird der Button gedrückt wird eine REST-Anfrage gesendet, welche weitere Schritte zur Speicherung der Credentials in der Datenbank vornimmt.
+
+Im unteren Teil der Seite kann ein durchgeführtes Kaffeekochen festgehalten werden. Hierfür muss nur die eigene Matrikelnummer angegeben werden und der Eintragen-Button gedrückt werden. Daraufhin wird eine REST-Anfrage gesendet, welche die erforderlichen Schritte zur Speicherung des Kochvorgangs in der Datenbank vornimmt.
 
 ### Übersicht REST-Services
 SWAGGER-Screenshot
@@ -79,4 +84,10 @@ SWAGGER-Screenshot
 kurze Beschreibung
 
 ### Beispielanwendungen der Services
-kurze Beschreibung der Anwendungsmöglichkeiten (Was kann ich bspw mit Alexa abfragen, welchen mehrwert?)
+Die implementierten Services wurden z.T. zur Unterstützung eines parallel laufenden Projekts erstellt, da diese auf von uns gesammelte Daten auf verschiedene Art und Weisen zugreifen mussten. Die bereitgestellten REST-Services erfüllten genau diese Kriterien bzw. wurden genau auf diese Anforderungen hin entworfen und implementiert.
+
+Anhand der REST-Services konnten Füllstand, Frische, fleißigster Koch etc. ganz einfach abgefragt werden. Die Parallelgruppe konnte diese Services verwenden, um die Daten per Amazon Alexa zu erfragen und nette Anfragen zu generieren.
+Das Speichern von Kochvorgängen war hierbei allerdings noch nicht berücksichtigt.
+
+
+

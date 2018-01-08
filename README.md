@@ -145,11 +145,11 @@ Link: http://localhost:8080/coffeemachine/lasttimebrewed
 Link: http://localhost:8080/coffeemachine/warmcoffee
 
 Um die REST-API-App zu starten die Datei /coffeemachine-api/target/kaffeemaschine-api-0.0.1-SNAPSHOT.jar folgendermassen starten:
-Die Konsole öffnen und einben   
+Die Konsole öffnen und eingeben   
 ```
 java -jar kaffeemaschine-api-0.0.1-SNAPSHOT.jar
 ```    
-Wenn die App gestartet hat können auf die resource zugegriffen werden.
+Wenn die App gestartet hat kann auf die Ressourcen zugegriffen werden.
 
 ## Ergebnis
 ### Bewertungssytem-Webfrontend

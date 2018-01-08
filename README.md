@@ -131,9 +131,19 @@ Wird der Button gedrückt wird eine REST-Anfrage gesendet, welche weitere Schrit
 Im unteren Teil der Seite kann ein durchgeführtes Kaffeekochen festgehalten werden. Hierfür muss nur die eigene Matrikelnummer angegeben werden und der Eintragen-Button gedrückt werden. Daraufhin wird eine REST-Anfrage gesendet, welche die erforderlichen Schritte zur Speicherung des Kochvorgangs in der Datenbank vornimmt.
 
 ### Übersicht REST-Services
-SWAGGER-Screenshot
+Um die implementierten Services ordentlich zu dokumentieren, zu visualisieren sowie direkt über den Browser testen zu können wurde eine Web-UI mit dem Spring-Swagger realisiert. Die Weboberflaesche ist über den folgenden Link innerhalb des HHZ Netzes erreichbar: http://localhost:8080/swagger-ui.html.
 
-kurze Beschreibung
+![swagger_uebersicht.png](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/swagger_uebersicht.PNG)  
+
+Auf der Grafik ist außer den Informationen über den Titel der Seite sowie über die Entwickle eine Übersicht von den verschiedenen Services zu sehen. Recht zu den Services kann gelesen werden was genau die einelnen Operationen zurückgeben. Ein Klick auf einen Service blendet weitere Informationen ein.
+
+![swagger_resource_expand_example](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/swagger_resource_expand_example.PNG)
+
+Wichtige davon sind das Datenmodel bzw. ein Beispiel vom Datensatz, den zurückgeliefert wird und der Button *try it out*. Dieser Button dienst dazu den Service zu testen. Der Test des Services GET coffeechef liefert folgendes Beispielergebnis zurück:
+
+![swagger_response_getcoffeechef](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/swagger_response_getcoffeechef.PNG)
+
+Somit ist eine schnelle Übersicht über die bereitgestellte API vorhanden, sodass weitere Integrationen erleichtert werden.
 
 ### Anwendung der Parallelgruppe
 Die implementierten Services wurden z.T. zur Unterstützung eines parallel laufenden Projekts erstellt, da diese auf die von uns gesammelte Daten auf verschiedene Art und Weise zugreifen mussten. Die bereitgestellten REST-Services erfüllten genau diese Kriterien bzw. wurden z.T. genau für diese Anforderungen entworfen und implementiert.

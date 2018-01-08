@@ -44,10 +44,11 @@ Unsere Anforderungen haben wir wie folgt definiert:
 
 ![Architektur.png](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/Architektur.png)
 
-* Die **Waage** (GRAM RZ-30): misst das Gewicht der darauf liegenden Kaffeekanne und übergibt die Daten per USB an dem Raspberry Pi
-* Der **Raspberry Pi**: darauf wird ein Python-Skript aufgespielt, der die Daten ausliest und in einer **SQLite** Datenbank abspeichert.
-* **Apache Tomcat**: dient als Open-Source-Webserver. Hier wird die **Bewertungssystem-Webseite** deployed.
-* Die **REST-APIs** wurden mit **Spring Boot** Framework implementiert. Mit diesem Framework können Applikationen selbständig (ohne externen Webserver) starten. Die realisierten APIs greifen auf der SQLite Datenbank zu, um die benötigten Daten auszulesen bzw. zu schreiben.
+* Die **Waage** (GRAM RZ-30): misst das Gewicht der darauf liegenden Kaffeekanne und übergibt die Daten per USB an den Raspberry Pi
+* Der **Raspberry Pi**: 
+	* hierauf wird das Python-Skript betrieben, welches die Daten ausliest und in einer **SQLite** Datenbank abspeichert.
+	* **Apache Tomcat**: dient als Open-Source-Webserver. Hierauf wird die **Bewertungssystem-Webseite** deployed.
+	* Die **REST-APIs** wurden mittels **Spring Boot** Framework implementiert. Anhand dieses Frameworks können Applikationen selbständig (ohne externen Webserver) gestartet und betrieben werden. Die realisierten APIs greifen auf der SQLite Datenbank zu, um die benötigten Daten auszulesen bzw. zu schreiben.
 
 
 ### Value Proposition Canvas
@@ -95,9 +96,9 @@ Die Tabelle UserCoffeeLevel enthält die Daten über durchgeführe Kochvorgänge
 
 ### REST-Services
 Wie im MVP bereits erwähnt mussten Ressourcen über den Füllstand und die Frische des Kaffees sowie weitere Infos wie den User, der zuletzt Kaffee gekocht hat, zur Verfügung gestellt werden.
-Mit der Bereitstellung der Kaffeekanne-Infos in Form von REST-APIs wurde ein Architekturstil geschafft, welcher die Anforderungen des modernen Webs gut darstellt. Somit ist eine Integration mit weiteren Systemen erleichtert und eine hohe Flexibilität erreicht.
-Für die Implementierung der REST-APIs wurde Java EE mit dem Framework Spring Boot verwendet. Die Anwendung gliedert sich in 3 Hauptmodulen:
-* Das Modul **Model**: besteht aus Klassen, welche die Datenmodelle der zu liefernden Ressourcen beschreiben. Die wichtigsten Modellen sind:
+Mit der Bereitstellung der Kaffeekannen-Infos in Form von REST-APIs wurde ein Architekturstil geschafft, welcher die Anforderungen des modernen Webs gut darstellt. Somit ist eine Integration mit weiteren Systemen erleichtert und eine hohe Flexibilität erreicht.
+Für die Implementierung der REST-APIs wurde Java EE mit dem Framework Spring Boot verwendet. Die Anwendung gliedert sich in 3 Hauptmodule:
+* Das Modul **Model**: besteht aus Klassen, welche die Datenmodelle der zu liefernden Ressourcen beschreiben. Die wichtigsten Modelle sind:
 	* User     
 	```
 	{
@@ -124,33 +125,33 @@ Für die Implementierung der REST-APIs wurde Java EE mit dem Framework Spring Bo
 	}
 	```
 
-* Das Modul **Service**: besteht aus einer Klasse, wo die Kernfunktionen der APIs implementiert wurden. Die Funktion getCoffeeChef() ist hierbei ein konkretes Beispiel, wo die Logik implementiert wurde, um herauszufinden welcher User am meisten Kaffee kocht.
+* Das Modul **Service**: besteht aus einer Klasse, in welcher die Kernfunktionen der APIs implementiert wurden. Die Funktion getCoffeeChef() ist hierbei ein konkretes Beispiel, wobei die Funktion implementiert wurde, herauszufinden welcher User am meisten Kaffee kocht.
 
-* Das Modul **Controller**: greift auf die Funktionen des Moduls Service zu. Hier ist eine Klasse implementiert über die die APIs tatsachlich nach Außen bereitgestellt werden.
+* Das Modul **Controller**: greift auf die Funktionen des Moduls Service zu. Hier ist die Klasse implementiert, über die die APIs tatsächlich nach Außen bereitgestellt werden.
 
 Auf die folgenden APIs  können zugegriffen werden:   
 
-**Coffee chef API**: stellt Daten zur Verfügung über den User, der am meisten Kaffee kocht.     
+**Coffee chef API**: stellt Daten zur Verfügung über den User der am meisten Kaffee kocht.     
 Link: http://localhost:8080/coffeemachine/coffeechef     
 
-**Coffee level API**: stellt Daten über den aktuellen Kaffeestand in der Kaffeekanne zur Verfügung.     
+**Coffee level API**: stellt Daten über den aktuellen Kaffeefüllstand in der Kaffeekanne zur Verfügung.     
 Link: http://localhost:8080/coffeemachine/coffeelevel      
 
 **Have brewed last API**: stellt Daten zur Verfügung über den User, der zuletzt Kaffee gekocht hat.     
 Link: http://localhost:8080/coffeemachine/havebrewedlast     
 
-**Last time brewed API**: stellt Daten zur Verfügung darüber, zu welchem Zeitpunkt Kaffee zuletzt gekocht wurde.     
+**Last time brewed API**: stellt Daten über den Zeitpunkt des letzten Kochens zur Verfügung.     
 Link: http://localhost:8080/coffeemachine/lasttimebrewed     
 
-**Warm coffee API**: stellt Daten zur Verfügung darüber, wie warm der Kaffee in der Kanne ist.     
+**Warm coffee API**: stellt Daten über die Wärme des Kaffees aus der Kanne zur Verfügung.     
 Link: http://localhost:8080/coffeemachine/warmcoffee
 
-Um die REST-API-App zu starten die Datei /coffeemachine-api/target/kaffeemaschine-api-0.0.1-SNAPSHOT.jar folgendermassen starten:
-Die Konsole öffnen und eingeben   
+Um die REST-API-App zu starten die Datei /coffeemachine-api/target/kaffeemaschine-api-0.0.1-SNAPSHOT.jar mit Java ausführen:
+Folgende Zeile ausführen   
 ```
 java -jar kaffeemaschine-api-0.0.1-SNAPSHOT.jar
 ```    
-Wenn die App gestartet hat kann auf die Ressourcen zugegriffen werden.
+Wenn die App gestartet hat kann direkt auf die Ressourcen zugegriffen werden.
 
 ## Ergebnis
 ### Bewertungssytem-Webfrontend
@@ -164,22 +165,21 @@ Wird der Button gedrückt wird eine REST-Anfrage gesendet, welche weitere Schrit
 Im unteren Teil der Seite kann ein durchgeführtes Kaffeekochen festgehalten werden. Hierfür muss nur die eigene Matrikelnummer angegeben werden und der Eintragen-Button gedrückt werden. Daraufhin wird eine REST-Anfrage gesendet, welche die erforderlichen Schritte zur Speicherung des Kochvorgangs in der Datenbank vornimmt.
 
 ### Übersicht REST-Services
-Um die implementierten Services ordentlich zu dokumentieren, zu visualisieren sowie direkt über den Browser testen zu können wurde eine Web-UI mit Spring-Swagger realisiert. Die Weboberflaesche ist über den folgenden Link innerhalb des HHZ Netzes erreichbar: http://localhost:8080/swagger-ui.html.
+Um die implementierten Services ordentlich zu dokumentieren, zu visualisieren sowie direkt über den Browser testen zu können wurde eine Web-UI mit Spring-Swagger realisiert. Die Weboberflaeche ist über den folgenden Link innerhalb des HHZ Netzes erreichbar: http://localhost:8080/swagger-ui.html.
 
 ![swagger_uebersicht.png](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/swagger_uebersicht.PNG)  
 
-Auf der Grafik ist außer den Informationen über den Titel der Seite sowie über die Entwickler eine Übersicht von den verschiedenen Services zu sehen. Rechts zu den Services kann gelesen werden, was genau die einelnen Operationen zurückgeben. Ein Klick auf einen Service blendet weitere Informationen ein.
+Auf der Grafik ist außer den Informationen über den Titel der Seite sowie über die Entwickler eine Übersicht von den verschiedenen Services zu sehen. Rechts kann zu den Services gelesen werden, welche Werte die einzelnen Operationen zurückgeben. Ein Klick auf einen Service blendet weitere Informationen über den Service ein.
 
 ![swagger_resource_expand_example](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/swagger_resource_expand_example.PNG)
 
-Wichtige von dieser Infos sind das Datenmodell bzw. ein Beispiel vom Datensatz, den zurückgeliefert werden kann und der Button *try it out*. Dieser Button dienst dazu den Service zu testen. Beispielerweise liefert den Test des Services GET coffeechef folgendes Beispielergebnis zurück:
+Ein wichtiger Bestandteil dieser Infos ist das Datenmodell bzw. die Beispiele vom Datensatz, welcher anhand des Buttons *try it out* live getestet werden kann. Beispielsweise liefert der Test des Services GET coffeechef folgendes Beispielergebnis zurück:
 
 ![swagger_response_getcoffeechef](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/swagger_response_getcoffeechef.PNG)
 
 Somit ist eine schnelle Übersicht über die bereitgestellten APIs vorhanden, sodass weitere Integrationen erleichtert werden.
 
 ### Anwendung der Parallelgruppe
-Die implementierten Services wurden z.T. zur Unterstützung eines parallel laufenden Projekts erstellt, da diese auf die von uns gesammelte Daten auf verschiedene Art und Weise zugreifen mussten. Die bereitgestellten REST-Services erfüllten genau diese Kriterien bzw. wurden z.T. genau für diese Anforderungen entworfen und implementiert.
+Die implementierten Services wurden z.T. zur Unterstützung eines parallel laufenden Projekts erstellt, da diese auf die von uns gesammelte Daten auf verschiedene Art und Weise zugreifen mussten. Die bereitgestellten REST-Services wurden auf diese Anforderungen und bestimmte Kriterien abgestimmt.
 
-Anhand der REST-Services konnten Füllstand, Frische, fleißigster Koch etc. ganz einfach abgefragt werden. Die Parallelgruppe konnte diese Services verwenden, um die Daten per Amazon Alexa zu erfragen und dabei für das HHZ sinnvolle und in der Praxis anwendbare Anfragen zu generieren.
-Das Speichern von Kochvorgängen war hierbei allerdings noch nicht berücksichtigt.
+Anhand der REST-Services konnten Füllstand, Frische, fleißigster Koch etc. ganz einfach abgefragt werden. Die Parallelgruppe konnte diese Services verwenden, um die Daten per Amazon Alexa per Sprachsteuerung zu erfragen und hat damit unser Projekt durch eine weitere Schnittstelle bereichert.

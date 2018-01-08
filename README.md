@@ -42,6 +42,14 @@ Unsere Anforderungen haben wir wie folgt definiert:
 
 ### Architektur
 
+![Architektur.png](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/Architektur.png)
+
+* Die **Waage** (GRAM RZ-30): misst das Gewicht der darauf liegenden Kaffeekanne und übergibt die Daten per USB an dem Raspberry Pi
+* Der **Raspberry Pi**: darauf wird ein Python-Skript aufgespielt, der die Daten ausliest und in einer **SQLite** Datenbank abspeichert.
+* **Apache Tomcat**: dient als Open-Source-Webserver. Hier wird die **Bewertungssystem-Webseite** deployed.
+* Die **REST-APIs** wurden mit **Spring Boot** Framework implementiert. Mit diesem Framework können Applikationen selbständig (ohne externen Webserver) starten. Die realisierten APIs greifen auf der SQLite Datenbank zu, um die benötigten Daten auszulesen bzw. zu schreiben.
+
+
 ### Value Proposition Canvas
 ![value_proposition_canvas.png](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/value_proposition_canvas.PNG)
 The most important customer jobs are project work and creative work.
@@ -85,6 +93,31 @@ Die Tabelle UserCoffeeLevel enthält die Daten über durchgeführe Kochvorgänge
 
 
 ### REST-Services
+Wie im MVP bereits erwähnt mussten Ressourcen über den Füllstand und der Frische des Kaffees sowie weitere Infos wie den User, der zuletzt Kaffee gekocht hat, zur Verfügung gestellt werden.
+Mit der Bereitstellung der Kaffeekanne-Infos in Form von REST-APIs wurde ein Architekturstil geschafft, welcher die Anforderungen des modernen Webs gut darstellt. Somit ist eine Integration mit weiteren Systemen erleichtert und eine hohe Flexibilität erreicht.
+Für die Implementierung der REST-APIs wurde Java EE mit dem Framework Spring Boot  verwendet. Die Anwendung gliedert sich in 3 Hauptmodulen:
+* Das Modul **Model**: besteht aus Klassen, welche die Datenmodelle der zu liefernden Ressourcen beschreiben.
+
+* Das Modul **Service**: besteht aus einer Klasse, wo die Kernfunktionen der API implementiert wurden. Die Funktion getCoffeeChef() ist hierbei ein konkretes Beispiel, wo die Logik implementiert wurde, um herauszufinden welcher User am meisten Kaffee kocht.
+
+* Das Modul **Controller**: greift auf die Funktionen des Moduls Service zu. Hier ist die Klasse implementiert über die die APIs tatsachlich nach Außen bereitgestellt werden.
+
+Auf die folgenden APIs  können zugegriffen werden:   
+
+**Coffee chef API**: stellt Daten zur Verfügung über den User, der am meisten Kaffee kocht.     
+Link: http://localhost:8080/coffeemachine/coffeechef     
+
+**Coffee level API**: stellt Daten über den aktuellen Kaffeestand in der Kaffeekanne zur Verfügung.     
+Link: http://localhost:8080/coffeemachine/coffeelevel      
+
+**Have brewed last API**: stellt Daten zur Verfügung über den User, der zuletzt Kaffee gekocht hat.     
+Link: http://localhost:8080/coffeemachine/havebrewedlast     
+
+**Last time brewed API**: stellt Daten zur Verfügung darüber, zu welchem Zeitpunkt Kaffee zuletzt gekocht wurde.     
+Link: http://localhost:8080/coffeemachine/lasttimebrewed     
+
+**Warm coffee API**: stellt Daten zur Verfügung darüber, wie warm der Kaffee in der Kanne ist.     
+Link: http://localhost:8080/coffeemachine/warmcoffee
 
 ## Ergebnis
 ### Bewertungssytem-Webfrontend

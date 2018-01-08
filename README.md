@@ -93,9 +93,9 @@ Die Tabelle UserCoffeeLevel enthält die Daten über durchgeführe Kochvorgänge
 
 
 ### REST-Services
-Wie im MVP bereits erwähnt mussten Ressourcen über den Füllstand und der Frische des Kaffees sowie weitere Infos wie den User, der zuletzt Kaffee gekocht hat, zur Verfügung gestellt werden.
+Wie im MVP bereits erwähnt mussten Ressourcen über den Füllstand und die Frische des Kaffees sowie weitere Infos wie den User, der zuletzt Kaffee gekocht hat, zur Verfügung gestellt werden.
 Mit der Bereitstellung der Kaffeekanne-Infos in Form von REST-APIs wurde ein Architekturstil geschafft, welcher die Anforderungen des modernen Webs gut darstellt. Somit ist eine Integration mit weiteren Systemen erleichtert und eine hohe Flexibilität erreicht.
-Für die Implementierung der REST-APIs wurde Java EE mit dem Framework Spring Boot  verwendet. Die Anwendung gliedert sich in 3 Hauptmodulen:
+Für die Implementierung der REST-APIs wurde Java EE mit dem Framework Spring Boot verwendet. Die Anwendung gliedert sich in 3 Hauptmodulen:
 * Das Modul **Model**: besteht aus Klassen, welche die Datenmodelle der zu liefernden Ressourcen beschreiben. Die wichtigsten Modellen sind:
 	* User     
 	```
@@ -123,9 +123,9 @@ Für die Implementierung der REST-APIs wurde Java EE mit dem Framework Spring Bo
 	}
 	```
 
-* Das Modul **Service**: besteht aus einer Klasse, wo die Kernfunktionen der API implementiert wurden. Die Funktion getCoffeeChef() ist hierbei ein konkretes Beispiel, wo die Logik implementiert wurde, um herauszufinden welcher User am meisten Kaffee kocht.
+* Das Modul **Service**: besteht aus einer Klasse, wo die Kernfunktionen der APIs implementiert wurden. Die Funktion getCoffeeChef() ist hierbei ein konkretes Beispiel, wo die Logik implementiert wurde, um herauszufinden welcher User am meisten Kaffee kocht.
 
-* Das Modul **Controller**: greift auf die Funktionen des Moduls Service zu. Hier ist die Klasse implementiert über die die APIs tatsachlich nach Außen bereitgestellt werden.
+* Das Modul **Controller**: greift auf die Funktionen des Moduls Service zu. Hier ist eine Klasse implementiert über die die APIs tatsachlich nach Außen bereitgestellt werden.
 
 Auf die folgenden APIs  können zugegriffen werden:   
 
@@ -163,7 +163,7 @@ Wird der Button gedrückt wird eine REST-Anfrage gesendet, welche weitere Schrit
 Im unteren Teil der Seite kann ein durchgeführtes Kaffeekochen festgehalten werden. Hierfür muss nur die eigene Matrikelnummer angegeben werden und der Eintragen-Button gedrückt werden. Daraufhin wird eine REST-Anfrage gesendet, welche die erforderlichen Schritte zur Speicherung des Kochvorgangs in der Datenbank vornimmt.
 
 ### Übersicht REST-Services
-Um die implementierten Services ordentlich zu dokumentieren, zu visualisieren sowie direkt über den Browser testen zu können wurde eine Web-UI mit dem Spring-Swagger realisiert. Die Weboberflaesche ist über den folgenden Link innerhalb des HHZ Netzes erreichbar: http://localhost:8080/swagger-ui.html.
+Um die implementierten Services ordentlich zu dokumentieren, zu visualisieren sowie direkt über den Browser testen zu können wurde eine Web-UI mit Spring-Swagger realisiert. Die Weboberflaesche ist über den folgenden Link innerhalb des HHZ Netzes erreichbar: http://localhost:8080/swagger-ui.html.
 
 ![swagger_uebersicht.png](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/swagger_uebersicht.PNG)  
 
@@ -171,7 +171,7 @@ Auf der Grafik ist außer den Informationen über den Titel der Seite sowie übe
 
 ![swagger_resource_expand_example](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/swagger_resource_expand_example.PNG)
 
-Wichtige davon sind das Datenmodell bzw. ein Beispiel vom Datensatz, den zurückgeliefert wird und der Button *try it out*. Dieser Button dienst dazu den Service zu testen. Der Test des Services GET coffeechef liefert folgendes Beispielergebnis zurück:
+Wichtige von dieser Infos sind das Datenmodell bzw. ein Beispiel vom Datensatz, den zurückgeliefert werden kann und der Button *try it out*. Dieser Button dienst dazu den Service zu testen. Beispielerweise liefert den Test des Services GET coffeechef folgendes Beispielergebnis zurück:
 
 ![swagger_response_getcoffeechef](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/swagger_response_getcoffeechef.PNG)
 

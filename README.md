@@ -144,6 +144,13 @@ Link: http://localhost:8080/coffeemachine/lasttimebrewed
 **Warm coffee API**: stellt Daten zur Verfügung darüber, wie warm der Kaffee in der Kanne ist.     
 Link: http://localhost:8080/coffeemachine/warmcoffee
 
+Um die REST-API-App zu starten die Datei /coffeemachine-api/target/kaffeemaschine-api-0.0.1-SNAPSHOT.jar folgendermassen starten:
+Die Konsole öffnen und einben   
+```
+java -jar kaffeemaschine-api-0.0.1-SNAPSHOT.jar
+```    
+Wenn die App gestartet hat können auf die resource zugegriffen werden.
+
 ## Ergebnis
 ### Bewertungssytem-Webfrontend
 Das Bewertungssystem ist über ein Webfrontend erreichbar. Man erreicht diese Seite allerdings nur aus dem Netzwerk des HHZ, sodass sichergestellt ist, dass dies auch nur von Personen innerhalb des HHZ aufgerufen werden kann.
@@ -160,15 +167,15 @@ Um die implementierten Services ordentlich zu dokumentieren, zu visualisieren so
 
 ![swagger_uebersicht.png](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/swagger_uebersicht.PNG)  
 
-Auf der Grafik ist außer den Informationen über den Titel der Seite sowie über die Entwickle eine Übersicht von den verschiedenen Services zu sehen. Recht zu den Services kann gelesen werden was genau die einelnen Operationen zurückgeben. Ein Klick auf einen Service blendet weitere Informationen ein.
+Auf der Grafik ist außer den Informationen über den Titel der Seite sowie über die Entwickler eine Übersicht von den verschiedenen Services zu sehen. Rechts zu den Services kann gelesen werden, was genau die einelnen Operationen zurückgeben. Ein Klick auf einen Service blendet weitere Informationen ein.
 
 ![swagger_resource_expand_example](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/swagger_resource_expand_example.PNG)
 
-Wichtige davon sind das Datenmodel bzw. ein Beispiel vom Datensatz, den zurückgeliefert wird und der Button *try it out*. Dieser Button dienst dazu den Service zu testen. Der Test des Services GET coffeechef liefert folgendes Beispielergebnis zurück:
+Wichtige davon sind das Datenmodell bzw. ein Beispiel vom Datensatz, den zurückgeliefert wird und der Button *try it out*. Dieser Button dienst dazu den Service zu testen. Der Test des Services GET coffeechef liefert folgendes Beispielergebnis zurück:
 
 ![swagger_response_getcoffeechef](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/swagger_response_getcoffeechef.PNG)
 
-Somit ist eine schnelle Übersicht über die bereitgestellte API vorhanden, sodass weitere Integrationen erleichtert werden.
+Somit ist eine schnelle Übersicht über die bereitgestellten APIs vorhanden, sodass weitere Integrationen erleichtert werden.
 
 ### Anwendung der Parallelgruppe
 Die implementierten Services wurden z.T. zur Unterstützung eines parallel laufenden Projekts erstellt, da diese auf die von uns gesammelte Daten auf verschiedene Art und Weise zugreifen mussten. Die bereitgestellten REST-Services erfüllten genau diese Kriterien bzw. wurden z.T. genau für diese Anforderungen entworfen und implementiert.

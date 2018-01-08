@@ -5,6 +5,7 @@
   * [Idee](#idee)
   * [MVP](#mvp)
   * [Architektur](#architektur)
+  * [Value Proposition Canvas](#value-proposition-canvas)
   * [Teilnehmer und Zuständigkeiten](#teilnehmer-und-zuständigkeiten)
 - [Durchführung](#durchführung)
   * [Datenerhebung und -verarbeitung](#datenerhebung-und--verarbeitung)
@@ -40,12 +41,28 @@ Unsere Anforderungen haben wir wie folgt definiert:
 * Bewertungssystem zur Speicherung von durchgeführten Kochvorgängen in Form eines Webfrontends
 
 ### Architektur
+
+### Value Proposition Canvas
+![value_proposition_canvas.png](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/value_proposition_canvas.PNG)
+The most important customer jobs are project work and creative work.
+In the "Pains" segment of the VPC we enter the problems of students. After a strenuous lecture mostly coffee is no longer available and must be freshly made. It takes a long time to make coffee. In the worst case, the break is over when coffee is available again
+
+We implement the services that are in the VPCs 'Gains' segment.
+The students regularly check the coffee so they have hot coffee during the break.
+
+As the most important part of the "Pain Reliever" segment, we mention the claim that coffee is always present. The students check the coffee stand before they go to the break.
+
+For the "Gain Creator" we mention that when the coffee level is low, the students fill up the coffee pot to drink hot coffee during the break and collect the bonus points.
+
+For 'Products & Services' we would need a scale to determine the coffee stock and a Respberry Pi to forward the data to the database.
+
+
 ### Teilnehmer und Zuständigkeiten
-Pascal Schmidt (Raspberry Pi Setup, Python Sensor, Python mit SQL, Webfrontend, Dokumentation) 
+Pascal Schmidt (Raspberry Pi Setup, Python SQL- und Sensor-Implementierung, SQLite Setup, Webfrontend, Dokumentation) 
 
 Lee Edwing Nguepedja (Implementierung REST Services, Apache Tomcat Setup, Webfrontend, Dokumentation) 
 
-Adil Sahiner (Präsentation)
+Adil Sahiner (Präsentation, Value Proposition Canvas)
 
 ## Durchführung
 ### Datenerhebung und -verarbeitung

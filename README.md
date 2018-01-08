@@ -52,17 +52,18 @@ Unsere Anforderungen haben wir wie folgt definiert:
 
 ### Value Proposition Canvas
 ![value_proposition_canvas.png](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/value_proposition_canvas.PNG)
-The most important customer jobs are project work and creative work.
-In the "Pains" segment of the VPC we enter the problems of students. After a strenuous lecture mostly coffee is no longer available and must be freshly made. It takes a long time to make coffee. In the worst case, the break is over when coffee is available again
+Die wichtigsten Kundenjobs sind Projektarbeit und kreative Arbeit.
 
-We implement the services that are in the VPCs 'Gains' segment.
-The students regularly check the coffee so they have hot coffee during the break.
+In das "Pains" -Segment der VPC tragen wir die Probleme von Studenten ein. Nach einem anstrengenden Vorlesungen ist meistens Kaffee nicht mehr vorhanden und muss frisch gemacht werden. Es dauert lange, um Kaffee zu machen. Im schlimmsten Fall ist die Pause vorbei, wenn Kaffee wieder vorhanden ist.
 
-As the most important part of the "Pain Reliever" segment, we mention the claim that coffee is always present. The students check the coffee stand before they go to the break.
+Wir implementieren die Dienste, die sich im Segment 'Gewinne' der VPC befinden. Die Studenten kontrollieren den Kaffee stand regelmäßig damit sie in der Pause warmes Kaffee zu Verfügung haben.
 
-For the "Gain Creator" we mention that when the coffee level is low, the students fill up the coffee pot to drink hot coffee during the break and collect the bonus points.
+Als wichtigster Teil des "Pain-Relievers" -Segments erwähnen wir die Behauptung, dass der immer Kaffee vorhanden ist. Die Studenten kontrollieren den Kaffeestand bevor die in die Pause gehen.
 
-For 'Products & Services' we would need a scale to determine the coffee stock and a Respberry Pi to forward the data to the database.
+Für den "Gain Creator" erwähnen wir das wenn der Kaffeestand niedrig ist, füllen die Studenten die Kaffeekanne auf. Somit hätten die Studenten in der Pause einen heißen Kaffee zu verfügung und gleichzeitig könnten sie Bonuspunkte sammeln.
+
+Für 'Products & Services' bräuchten wir eine Waage um den Kaffeestand ermitteln zu können und einen Raspberry Pi der die Daten an die Datenbank weiterleitet.
+
 
 
 ### Teilnehmer und Zuständigkeiten
@@ -70,7 +71,7 @@ Pascal Schmidt (Raspberry Pi Setup, Python SQL- und Sensor-Implementierung, SQLi
 
 Lee Edwing Nguepedja (Implementierung REST Services, Apache Tomcat Setup, Webfrontend, Dokumentation) 
 
-Adil Sahiner (Präsentation, Value Proposition Canvas)
+Adil Sahiner (Präsentation, Value Proposition Canvas, Dokumentation)
 
 ## Durchführung
 ### Datenerhebung und -verarbeitung

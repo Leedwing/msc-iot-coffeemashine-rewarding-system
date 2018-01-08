@@ -67,7 +67,7 @@ Adil Sahiner (Präsentation, Value Proposition Canvas)
 ## Durchführung
 ### Datenerhebung und -verarbeitung
 Als ersten Schritt galt es, die Daten aus der Waage auszulesen. Das aktuelle Gewicht auf der Waage kann wie im Vorgängerprojekt bereits beschrieben anhand eines USB-Adapters ausgelesen werden. Die Waage wird am Rechner als HID-Gerät interpretiert, wodurch  nach Anschluss kontinuierlich Gewichtsdaten in Form von Tastatureingaben an den Rechner gesendet werden.
-Die genauere Form der Daten und deren Interpretation ist im Wiki des Vorgängerprojekts nachzulesen [siehe hier](https://github.com/miwurster/msc-iot-kaffeekanne).
+Die genauere Form der Daten und deren Interpretation ist im Wiki des Vorgängerprojekts nachzulesen ([siehe hier](https://github.com/miwurster/msc-iot-kaffeekanne)).
 Der Einfachheit halber haben wir uns das für die Datenverarbeitung verwendete Python-Skript der Vorgänger zur Hand genommen und auf unsere eigenen Bedürfnisse angepasst bzw. um Funktionen erweitert.
 Das Skript ([scale_handler.py](https://github.com/Leedwing/msc-iot-coffeemashine-rewarding-system/blob/master/msc-iot-coffeemashine-rewarding-system/Raspberry/scale_handler.py)) verarbeitet die per USB ankommenden Daten und speichert diese in bestimmten Zyklen in der von uns neu aufgesetzten SQLite-Datenbank. Da die Waage sehr hochfrequent Gewichtsdaten bereitstellt wird hierbei nicht jedes empfangene Gewicht gespeichert, sondern nur der Median von Gewichtsdaten aus einem variabel festlegbaren Zeitintervall.
 

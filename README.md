@@ -96,7 +96,32 @@ Die Tabelle UserCoffeeLevel enthält die Daten über durchgeführe Kochvorgänge
 Wie im MVP bereits erwähnt mussten Ressourcen über den Füllstand und der Frische des Kaffees sowie weitere Infos wie den User, der zuletzt Kaffee gekocht hat, zur Verfügung gestellt werden.
 Mit der Bereitstellung der Kaffeekanne-Infos in Form von REST-APIs wurde ein Architekturstil geschafft, welcher die Anforderungen des modernen Webs gut darstellt. Somit ist eine Integration mit weiteren Systemen erleichtert und eine hohe Flexibilität erreicht.
 Für die Implementierung der REST-APIs wurde Java EE mit dem Framework Spring Boot  verwendet. Die Anwendung gliedert sich in 3 Hauptmodulen:
-* Das Modul **Model**: besteht aus Klassen, welche die Datenmodelle der zu liefernden Ressourcen beschreiben.
+* Das Modul **Model**: besteht aus Klassen, welche die Datenmodelle der zu liefernden Ressourcen beschreiben. Die wichtigsten Modellen sind:
+	* User     
+	```
+	{
+ 	 "cookingCount": "integer",
+ 	 "firstName": "string",
+ 	 "lastName": "string",
+ 	 "registrationNo": "string"
+	}
+	```   
+	
+	* CoffeeLevel   
+	```
+	{
+ 	 "date": "date",
+ 	 "weight": "integer",
+	}
+	```     
+	
+	* UserCoffeeLevel     
+	```
+	{
+ 	 "user": "user",
+ 	 "date": "date",
+	}
+	```
 
 * Das Modul **Service**: besteht aus einer Klasse, wo die Kernfunktionen der API implementiert wurden. Die Funktion getCoffeeChef() ist hierbei ein konkretes Beispiel, wo die Logik implementiert wurde, um herauszufinden welcher User am meisten Kaffee kocht.
 
